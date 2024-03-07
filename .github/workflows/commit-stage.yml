@@ -68,7 +68,7 @@ jobs:
         working-directory: catalog-service 
         run: |
           chmod +x mvnw
-          ./mvnw spring-boot:build-image -Dapp.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          ./mvnw -X spring-boot:build-image -Dapp.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -Dapp.username=${{ github.actor }} -Dapp.password=${{ secrets.GITHUB_TOKEN }} -Dapp.url=${{ env.REGISTRY }}
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan

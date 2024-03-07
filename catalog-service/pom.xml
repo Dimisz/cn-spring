@@ -17,8 +17,9 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 		<app.imageName>imageName</app.imageName>
-<!--		<app.password>password</app.password>-->
-<!--		<app.url>url</app.url>-->
+		<app.password>password</app.password>
+		<app.username>username</app.username>
+		<app.url>url</app.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -103,13 +104,13 @@
 						<name>${app.imageName}</name>
 						<publish>true</publish>
 					</image>
-<!--					<docker>-->
-<!--						<publishRegistry>-->
-<!--							<username>${app.username}</username>-->
-<!--							<password>${app.password}</password>-->
-<!--							<url>${app.url}</url>-->
-<!--						</publishRegistry>-->
-<!--					</docker>-->
+					<docker>
+						<publishRegistry>
+							<username>${app.username}</username>
+							<password>${app.password}</password>
+							<url>${app.url}</url>
+						</publishRegistry>
+					</docker>
 				</configuration>
 			</plugin>
 		</plugins>
