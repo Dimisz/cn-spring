@@ -64,7 +64,8 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: maven
-      - name: Build container image 
+      - name: Build container image
+        working-directory: catalog-service 
         run: |
           chmod +x mvnw
           ./mvnw install -Dapp.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
