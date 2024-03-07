@@ -68,7 +68,7 @@ jobs:
         working-directory: catalog-service 
         run: |
           chmod +x mvnw
-          ./mvnw install -Dapp.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+          ./mvnw spring-boot:build-image -Dapp.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
