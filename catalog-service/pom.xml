@@ -16,10 +16,10 @@
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
-		<app.imageName>imageName</app.imageName>
+		<app.imageName>catalog-service:latest</app.imageName>
 		<app.password>password</app.password>
-		<app.username>username</app.username>
-		<app.url>url</app.url>
+		<app.username>dimisz</app.username>
+		<app.url>ghcr.io</app.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -102,7 +102,10 @@
 				<configuration>
 					<image>
 						<name>${app.imageName}</name>
-						<publish>true</publish>
+						<env>
+							<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+						</env>
+<!--						<publish>true</publish>-->
 					</image>
 					<docker>
 						<publishRegistry>
